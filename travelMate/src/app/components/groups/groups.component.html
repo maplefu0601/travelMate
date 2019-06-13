@@ -1,0 +1,51 @@
+<button class="btn btn-primary" (click)="showCreateGroup(true)">Create New Group</button>
+<div *ngIf="showNewGroup" class="card">
+  <form [formGroup]="groupForm" (ngSubmit)="createGroup()">
+    <div class="card-body">
+      <div class="input-group mb-3">
+        <div class="input-group-prepend"><span class="input-group-text" id="basic-addon3">Group Name</span></div>
+        <input formControlName="name" type="text" class="form-control" aria-describedby="basic-addon3" />
+      </div>
+      <div class="input-group">
+        <div class="input-group-prepend"><span class="input-group-text">Description</span></div>
+        <textarea formControlName="description" class="form-control" aria-label="With textarea"></textarea>
+      </div>
+      <div class="input-group mb-3">
+        <div class="input-group-prepend"><span class="input-group-text">Start From</span></div>
+        <input formControlName="start" type="text" class="form-control" aria-describedby="basic-addon3" />
+      </div>
+      <div class="input-group mb-3">
+        <div class="input-group-prepend"><span class="input-group-text">Destination</span></div>
+        <input formControlName="destination" type="text" class="form-control" aria-describedby="basic-addon3" />
+      </div>
+      <div>
+        <button class="btn btn-primary member" (click)="(createGroup)">Create</button>
+        <button class="btn btn-primary" (click)="showCreateGroup(false)">Cancel</button>
+      </div>
+    </div>
+  </form>
+</div>
+<div class="row">
+  <ul *ngFor="let group of groups">
+    <div class="col-sm-6">
+      <div class="card group">
+        <div class="card-body">
+          <h5 class="btn btn-primary btn-block">
+            {{ group.name }}<span class="badge badge-light memberNum">{{ group.members.length }}</span>
+          </h5>
+          <p class="card-text scroll">{{ group.description }}</p>
+          <p class="card-text">Start From: {{ group.start }}</p>
+          <p class="card-text">Destination: {{ group.destination }}</p>
+
+          <div class="member" *ngFor="let user of group.members">
+            <span class="badge badge-secondary member">{{ user }}</span>
+          </div>
+          <div>
+            <button [disabled]="isMember(group)" class="btn btn-primary member" (click)="join(group)">Join</button>
+            <button [disabled]="!isMember(group)" class="btn btn-primary" (click)="quit(group)">Quit</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </ul>
+</div>

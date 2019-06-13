@@ -1,0 +1,9 @@
+<div class=" message-body body-left-20">
+  <ul class="list-group list-group-flush card-header" *ngFor="let user of users">
+    <div class=" d-flex w-100 justify-content-between small-header ">
+      <small class="mb-1">{{user.name}} from {{user.location.city}}, {{user.location.region}}</small>
+      <small>{{user.event}} on {{user.eventTime}}</small>
+    </div>
+
+  </ul>
+</div>

@@ -1,0 +1,22 @@
+<div class=" message-body body-left-20">
+  <ul class="list-group list-group-flush" *ngFor="let msg of messages">
+    <div class=" d-flex w-100 justify-content-between small-header ">
+      <small class="mb-1">{{msg.createdBy}}</small>
+      <small>{{msg.createdOn}}</small>
+      <span *ngIf="isOwner(msg.createdBy)" class="badge badge-secondary badge-pill fa fa-trash" (click)="delete(msg)">x</span>
+    </div>
+    <p class="mb-1">{{msg.message}}</p>
+
+  </ul>
+</div>
+<div class="card">
+  <div class="card-body">
+    <div class="form-group">
+      <label class="col-md-4">New Message</label>
+      <input type="text" #newmessage class="form-control" name="newmessage" />
+    </div>
+    <div class="form-group">
+      <button class="btn btn-primary" (click)="add(newmessage.value);newmessage.value=''">Send Message</button>
+    </div>
+  </div>
+</div>

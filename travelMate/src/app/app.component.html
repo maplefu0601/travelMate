@@ -1,0 +1,26 @@
+<div class="bg-secondary">
+  <div class=" text-center text-white bg-secondary mb-3"><h2 class="card-header">travelMATE</h2></div>
+
+  <nav class="navbar navbar-expand-sm bg-dark">
+    <div class="container-fluid">
+      <ul class="navbar-nav">
+        <li class="nav-item"><a routerLink="home" class="nav-link" routerLinkActive="active"> Home </a></li>
+        <li class="nav-item"><a routerLink="messages" class="nav-link" routerLinkActive="active"> Messages </a></li>
+        <li class="nav-item"><a routerLink="events" class="nav-link" routerLinkActive="active"> Events </a></li>
+        <li class="nav-item">
+          <a routerLink="groups" class="nav-link" routerLinkActive="active"> Group Information </a>
+        </li>
+        <li class="nav-item"><a routerLink="users" class="nav-link" routerLinkActive="active"> Users </a></li>
+      </ul>
+      <form class="form-inline my-2 my-lg-0">
+        <button class="btn btn-link my-2 my-sm-0" type="button" *ngIf="userLoggedin" (click)="logout()">
+          {{ userStatus }}
+        </button>
+        <button class="btn btn-link my-2 my-sm-0" type="button" *ngIf="!userLoggedin" routerLink="login">
+          {{ userStatus }}
+        </button>
+      </form>
+    </div>
+  </nav>
+  <div class="container bg-secondary"><router-outlet></router-outlet></div>
+</div>

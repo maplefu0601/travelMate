@@ -1,0 +1,40 @@
+<div class="container-full row justify-content-md-center">
+	<div class="col col-lg-8" style="display:inline-block">
+		<div class="card message-body" full (click)="goto('messages')">
+			<div class="card-header">
+				Messages
+			</div>
+			<div class=" message-body body-left-20">
+				<ul class="list-group list-group-flush" *ngFor="let msg of messages">
+					<p class="mb-1">{{msg.message}}</p>
+
+				</ul>
+			</div>
+		</div>
+		<div class="card  message-body" (click)="goto('events')">
+			<div class="card-header">
+				Events
+			</div>
+			<div class="card-body">
+				<ul class="list-group list-group-flush" *ngFor="let event of events">
+					<p class="mb-1">{{event.content}}</p>
+
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div class="card col full" style="display:inline-block" (click)="goto('users')">
+		<div class="card-header">
+			Users
+		</div>
+		<div class=" message-body">
+			<ul class="list-group list-group-flush" *ngFor="let user of users">
+				<div class="card">
+					<div class="card-header">{{user.name}}</div>
+					<div class="card-footer">{{user.lastLogin}}</div>
+				</div>
+
+			</ul>
+		</div>
+	</div>
+</div>

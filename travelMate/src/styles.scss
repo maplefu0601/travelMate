@@ -1,0 +1,19 @@
+/* You can add global styles to this file, and also import other style files */
+@import '~bootstrap/dist/css/bootstrap.min.css';
+
+body {
+  background-color: #6c757d;
+  height: 100%;
+}
+
+.message-body {
+  background: white;
+  min-height: 300px;
+  max-height: 400px;
+  overflow: scroll;
+}
+
+.body-left-20 {
+  padding-left: 20px;
+  padding-right: 15px;
+}

@@ -1,0 +1,25 @@
+<div class=" message-body body-left-20">
+  <ul class="list-group list-group-flush card-header" *ngFor="let event of events">
+    <div class=" d-flex w-100 justify-content-between small-header ">
+      <small class="mb-1">{{event.createdBy}}</small>
+      <small>{{event.createdOn}}</small>
+      <span *ngIf="isOwner(event.createdBy)" id={{event.id}} class="badge badge-secondary badge-pill fa fa-trash"
+        (click)="delete(event)">x</span>
+    </div>
+    <p class="mb-1">{{event.content}}</p>
+
+  </ul>
+</div>
+<div class="card">
+  <div class="card-body">
+    <div class="input-group mb-3">
+      <input type="text" class="form-control" #newevent name="newevent" placeholder="new event" aria-label="event"
+        aria-describedby="basic-addon2">
+      <div class="input-group-append">
+        <button class="btn btn-outline-secondary" type="button" (click)="add(newevent.value);newevent.value=''">Send
+          Event</button>
+      </div>
+    </div>
+
+  </div>
+</div>
