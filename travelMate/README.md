@@ -4,8 +4,7 @@ This project is designed for the people in the community who is travelling or wi
 
 ## Install steps
 
-1. unzip zip file or git clone from azure
-   https://7wcm0035-xf18aaa-new@dev.azure.com/7wcm0035-xf18aaa-new/CaseStudyApplication-xf18aaa/_git/CaseStudyApplication-xf18aaa
+1. git clone from Azure
 
 2. cd CaseStudyApplication-xf18aaa
 3. cd travelMate
